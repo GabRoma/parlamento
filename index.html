@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribución de Bancas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/item-series.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Distribución de Bancas en el Parlamento Uruguayo</h1>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">Ingrese los porcentajes de votos para cada partido:</h2>
+                <div id="partidos-inputs" class="form-group">
+                    <!-- Inputs para los partidos -->
+                    <label>Frente Amplio: <input type="number" class="form-control" id="partido1" name="Frente Amplio" step="0.1" min="0" max="100" required> %</label>
+                    <label>Partido Nacional: <input type="number" class="form-control" id="partido2" name="Partido Nacional" step="0.1" min="0" max="100" required> %</label>
+                    <label>Partido Colorado: <input type="number" class="form-control" id="partido3" name="Partido Colorado" step="0.1" min="0" max="100" required> %</label>
+                    <label>Cabildo Abierto: <input type="number" class="form-control" id="partido4" name="Cabildo Abierto" step="0.1" min="0" max="100" required> %</label>
+                    <label>Partido Independiente: <input type="number" class="form-control" id="partido5" name="Partido Independiente" step="0.1" min="0" max="100" required> %</label>
+                    <label>Partido Ecologista: <input type="number" class="form-control" id="partido6" name="Partido Ecologista" step="0.1" min="0" max="100" required> %</label>
+                    <label>Identidad Soberana: <input type="number" class="form-control" id="partido7" name="Identidad Soberana" step="0.1" min="0" max="100" required> %</label>
+                    <label>Asamblea Popular: <input type="number" class="form-control" id="partido8" name="Asamblea Popular" step="0.1" min="0" max="100" required> %</label>
+                    <label>Cambios Necesarios: <input type="number" class="form-control" id="partido9" name="Cambios Necesarios" step="0.1" min="0" max="100" required> %</label>
+                    <label>Avanzar Republicano: <input type="number" class="form-control" id="partido10" name="Avanzar Republicano" step="0.1" min="0" max="100" required> %</label>
+                    <label>Partido Constitucional: <input type="number" class="form-control" id="partido11" name="Constitucional Ambientalista" step="0.1" min="0" max="100" required> %</label>
+                </div>
+                
+                <h2 class="card-title">Ingrese los porcentajes de votos en blanco y anulados:</h2>
+                <div id="blancosYAnulados" class="form-group">
+                    <label>Votos en blanco: <input type="number" class="form-control" id="votosBlancos" step="0.1" min="0" max="100" required> %</label>
+                    <label>Votos anulados: <input type="number" class="form-control" id="votosAnulados" step="0.1" min="0" max="100" required> %</label>
+                    <label>Votantes indecisos: <input type="number" class="form-control" id="indecisos" step="0.1" min="0" max="100" required> %</label>
+                </div>
+                
+                <button class="btn btn-primary" onclick="actualizarGraficos()">Actualizar Gráficos</button>
+            </div>
+        </div>
+
+        
+        <figure class="highcharts-figure">
+            <div id="deputies-container"></div>
+        </figure>
+        <figure class="highcharts-figure">
+            <div id="senators-container"></div>
+        </figure>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
